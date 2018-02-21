@@ -1,0 +1,460 @@
+swagger: '2.0'
+info:
+  version: v1
+  title: My API
+paths:
+  /api/bikes:
+    get:
+      tags:
+        - Bikes
+      operationId: ApiBikesGet
+      consumes: []
+      produces: []
+      responses:
+        '200':
+          description: Success
+    post:
+      tags:
+        - Bikes
+      operationId: ApiBikesPost
+      consumes:
+        - application/json-patch+json
+        - application/json
+        - text/json
+        - application/*+json
+      produces: []
+      parameters:
+        - name: bike
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Bike'
+      responses:
+        '200':
+          description: Success
+  /api/bikes/GetAvailableBikes:
+    get:
+      tags:
+        - Bikes
+      operationId: ApiBikesGetAvailableBikesGet
+      consumes: []
+      produces: []
+      responses:
+        '200':
+          description: Success
+  '/api/bikes/{id}':
+    get:
+      tags:
+        - Bikes
+      operationId: ApiBikesByIdGet
+      consumes: []
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+    put:
+      tags:
+        - Bikes
+      operationId: ApiBikesByIdPut
+      consumes:
+        - application/json-patch+json
+        - application/json
+        - text/json
+        - application/*+json
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+        - name: bike
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Bike'
+      responses:
+        '200':
+          description: Success
+    delete:
+      tags:
+        - Bikes
+      operationId: ApiBikesByIdDelete
+      consumes: []
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  /api/customers:
+    get:
+      tags:
+        - Customers
+      operationId: ApiCustomersGet
+      consumes: []
+      produces: []
+      responses:
+        '200':
+          description: Success
+    post:
+      tags:
+        - Customers
+      operationId: ApiCustomersPost
+      consumes:
+        - application/json-patch+json
+        - application/json
+        - text/json
+        - application/*+json
+      produces: []
+      parameters:
+        - name: customer
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Customer'
+      responses:
+        '200':
+          description: Success
+  '/api/customers/{id}':
+    get:
+      tags:
+        - Customers
+      operationId: ApiCustomersByIdGet
+      consumes: []
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+    put:
+      tags:
+        - Customers
+      operationId: ApiCustomersByIdPut
+      consumes:
+        - application/json-patch+json
+        - application/json
+        - text/json
+        - application/*+json
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+        - name: customer
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Customer'
+      responses:
+        '200':
+          description: Success
+    delete:
+      tags:
+        - Customers
+      operationId: ApiCustomersByIdDelete
+      consumes: []
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  '/api/customers/GetCustomerRentals/{id}':
+    get:
+      tags:
+        - Customers
+      operationId: ApiCustomersGetCustomerRentalsByIdGet
+      consumes: []
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  /api/rentals:
+    get:
+      tags:
+        - Rentals
+      operationId: ApiRentalsGet
+      consumes: []
+      produces: []
+      responses:
+        '200':
+          description: Success
+    post:
+      tags:
+        - Rentals
+      operationId: ApiRentalsPost
+      consumes:
+        - application/json-patch+json
+        - application/json
+        - text/json
+        - application/*+json
+      produces: []
+      parameters:
+        - name: rental
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Rental'
+      responses:
+        '200':
+          description: Success
+  '/api/rentals/{id}':
+    get:
+      tags:
+        - Rentals
+      operationId: ApiRentalsByIdGet
+      consumes: []
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+    put:
+      tags:
+        - Rentals
+      operationId: ApiRentalsByIdPut
+      consumes:
+        - application/json-patch+json
+        - application/json
+        - text/json
+        - application/*+json
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+        - name: rental
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Rental'
+      responses:
+        '200':
+          description: Success
+    delete:
+      tags:
+        - Rentals
+      operationId: ApiRentalsByIdDelete
+      consumes: []
+      produces: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  /api/rentals/StartRental:
+    get:
+      tags:
+        - Rentals
+      operationId: ApiRentalsStartRentalGet
+      consumes: []
+      produces: []
+      parameters:
+        - name: custId
+          in: query
+          required: true
+          type: integer
+          format: int32
+        - name: bikeId
+          in: query
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  /api/rentals/EndRental:
+    get:
+      tags:
+        - Rentals
+      operationId: ApiRentalsEndRentalGet
+      consumes: []
+      produces: []
+      parameters:
+        - name: custId
+          in: query
+          required: true
+          type: integer
+          format: int32
+        - name: bikeId
+          in: query
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  /api/rentals/Pay:
+    get:
+      tags:
+        - Rentals
+      operationId: ApiRentalsPayGet
+      consumes: []
+      produces: []
+      parameters:
+        - name: custId
+          in: query
+          required: true
+          type: integer
+          format: int32
+        - name: bikeID
+          in: query
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  /api/rentals/Unpaid:
+    get:
+      tags:
+        - Rentals
+      operationId: ApiRentalsUnpaidGet
+      consumes: []
+      produces: []
+      responses:
+        '200':
+          description: Success
+definitions:
+  Bike:
+    required:
+      - purchaseDate
+      - rentalPriceFirstHour
+      - rentalPriceAdditionalHour
+      - bikeCategory
+    type: object
+    properties:
+      id:
+        format: int32
+        type: integer
+      purchaseDate:
+        format: date-time
+        type: string
+      notes:
+        maxLength: 1000
+        type: string
+      dateOfLastService:
+        format: date-time
+        type: string
+      rentalPriceFirstHour:
+        format: double
+        minimum: 0
+        type: number
+      rentalPriceAdditionalHour:
+        format: double
+        minimum: 1
+        type: number
+      bikeCategory:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        type: integer
+  Customer:
+    required:
+      - gender
+      - firstName
+      - lastName
+      - birthday
+      - zipCode
+      - town
+    type: object
+    properties:
+      id:
+        format: int32
+        type: integer
+      gender:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+        type: integer
+      firstName:
+        maxLength: 50
+        type: string
+      lastName:
+        maxLength: 75
+        type: string
+      birthday:
+        format: date-time
+        type: string
+      houseNumber:
+        maxLength: 10
+        type: string
+      zipCode:
+        maxLength: 10
+        type: string
+      town:
+        maxLength: 75
+        type: string
+  Rental:
+    required:
+      - customer
+      - bike
+      - rentalBegin
+      - rentalEnd
+      - paid
+    type: object
+    properties:
+      id:
+        format: int32
+        type: integer
+      customer:
+        $ref: '#/definitions/Customer'
+      bike:
+        $ref: '#/definitions/Bike'
+      rentalBegin:
+        format: date-time
+        type: string
+      rentalEnd:
+        format: date-time
+        type: string
+      rentalCosts:
+        format: double
+        minimum: 1
+        type: number
+      paid:
+        type: boolean
+securityDefinitions: {}

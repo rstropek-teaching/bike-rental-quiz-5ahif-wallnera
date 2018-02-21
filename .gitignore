@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs
+/Bikerental/.vs/Bikerental/v15
+/Bikerental/Bikerental/bin/Debug/netcoreapp2.0
+/Bikerental/Bikerental/obj
+/Bikerental/BikeRentalLogic/obj
+/Bikerental/BikerentalTests/bin/Debug/netcoreapp2.0
+/Bikerental/BikerentalTests/obj
