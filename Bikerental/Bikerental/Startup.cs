@@ -21,7 +21,8 @@ namespace Bikerental
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=BikeRentalDB;Trusted_Connection=True;ConnectRetryCount=0";
+            // from Azure
+            var connection = @"Server = tcp:bikerentalserverwallnera.database.windows.net,1433;Initial Catalog = BikeRentalDB; Persist Security Info = False; User ID = wallnera; Password = [password]; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30";
             services.AddDbContext<DataContext>(options => options.UseSqlServer(connection));
             // Register the Swagger generator, defining one or more Swagger documents
             services.AddSwaggerGen(c =>
